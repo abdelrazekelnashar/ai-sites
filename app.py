@@ -6,22 +6,37 @@ st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
 # Inject custom CSS to remove Streamlit's default padding and make the iframe full screen
 st.markdown("""
 <style>
-    /* Hide Streamlit header and footer */
-    header {visibility: hidden;}
-    footer {visibility: hidden;}
+    /* Hide Streamlit header (toolbar) and footer */
+    header[data-testid="stHeader"] {display: none !important;}
+    footer {display: none !important;}
     
     /* Remove padding from the main block container */
-    .block-container {
+    [data-testid="stMainBlockContainer"] {
         padding: 0 !important;
         max-width: 100% !important;
     }
+    .block-container {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+    }
     
-    /* Make the iframe take up the full viewport height */
+    /* Ensure the iframe fills the entire screen */
     iframe {
         height: 100vh !important;
         width: 100vw !important;
         border: none !important;
-        display: block;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Hide Streamlit's default margins */
+    .stApp {
+        margin: 0 !important;
+        padding: 0 !important;
     }
 </style>
 """, unsafe_allow_html=True)
