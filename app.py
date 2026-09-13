@@ -1,6 +1,8 @@
 import streamlit as st
 
-with open("index.html", "r", encoding="utf-8") as f:
-  html_content = f.read()
+st.set_page_config(layout="wide")
 
-st.components.v1.html(html_content, height=600, scrolling=True)
+with open("index.html", "r", encoding="utf-8") as f:
+  html_data = f.read()
+
+st.components.v1.html(html_data, height=900, scrolling=True)
