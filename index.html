@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Bookmark Manager</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Dashboard -->
+    <div id="dashboard" class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <h2>AI Categories</h2>
+            <ul id="category-list" class="category-list">
+                <li class="active" data-category="All">All</li>
+                <!-- Categories injected via JS -->
+            </ul>
+            <div class="sidebar-actions">
+                <button id="export-btn" class="btn secondary-btn">Export Backup</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header glass-panel">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search AI tools...">
+                </div>
+            </header>
+
+            <div id="bookmarks-grid" class="bookmarks-grid">
+                <!-- Bookmark Cards injected via JS -->
+            </div>
+        </main>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
