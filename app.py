@@ -1,5 +1,6 @@
 import streamlit as st
 import re
+import os
 
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
 
@@ -41,13 +42,15 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-with open("index.html", "r", encoding="utf-8") as f:
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+with open(os.path.join(current_dir, "index.html"), "r", encoding="utf-8") as f:
   html_data = f.read()
 
-with open("style.css", "r", encoding="utf-8") as f:
+with open(os.path.join(current_dir, "style.css"), "r", encoding="utf-8") as f:
   css_data = f.read()
 
-with open("app.js", "r", encoding="utf-8") as f:
+with open(os.path.join(current_dir, "app.js"), "r", encoding="utf-8") as f:
   js_data = f.read()
 
 # Inject CSS and JS directly into the HTML
